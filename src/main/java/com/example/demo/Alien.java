@@ -1,13 +1,22 @@
 package com.example.demo;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+@Scope(value="prototype") // by default its singleton(will create one object before creating)
+// for prototype it will create obj in runtime
 public class Alien {
 
 	private int aId;
 	private String aName;
 	private String tech;
+	
+	
+	public Alien() {
+		super();
+		System.out.println("Object created..");
+	}
 	
 	public int getaId() {
 		return aId;
@@ -29,7 +38,7 @@ public class Alien {
 	}
 	
 	public void show() {
-		System.out.print("Yes its working");
+		System.out.println("Yes its working");
 	}
 	
 }

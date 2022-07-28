@@ -12,6 +12,9 @@ public class FirstSpringBootAppApplication {
 		System.out.println("Welocme to boot...");
 		Alien a = context.getBean(Alien.class);
 		a.show();
+		
+		Alien a1 = context.getBean(Alien.class);
+		a1.show();
 	}
 
 }
