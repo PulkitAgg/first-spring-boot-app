@@ -1,10 +1,11 @@
 package com.example.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope(value="prototype") // by default its singleton(will create one object before creating)
+//@Scope(value="prototype") // by default its singleton(will create one object before creating)
 // for prototype it will create obj in runtime
 public class Alien {
 
@@ -12,6 +13,8 @@ public class Alien {
 	private String aName;
 	private String tech;
 	
+	@Autowired
+	private Laptop laptop;
 	
 	public Alien() {
 		super();
@@ -37,8 +40,18 @@ public class Alien {
 		this.tech = tech;
 	}
 	
+	
+	public Laptop getLaptop() {
+		return laptop;
+	}
+
+	public void setLaptop(Laptop laptop) {
+		this.laptop = laptop;
+	}
+
 	public void show() {
 		System.out.println("Yes its working");
+		laptop.compile();
 	}
 	
 }

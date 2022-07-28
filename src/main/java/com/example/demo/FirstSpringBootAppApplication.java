@@ -13,8 +13,6 @@ public class FirstSpringBootAppApplication {
 		Alien a = context.getBean(Alien.class);
 		a.show();
 		
-		Alien a1 = context.getBean(Alien.class);
-		a1.show();
 	}
 
 }
